@@ -14,56 +14,60 @@ public class colas {
             this.nombreCliente= nombreCliente;// cuando queremos atribuirle un valor
         }
     }
+    public boolean isEmptyTail(){
+        if(cabeza == null && cola == null){
+            return true;
+        }else
+            return false;
+    }
+
     public void agregarCola(int pedido, String cliente){
         nodoPedido nuevPedido= new nodoPedido(pedido, cliente);
-        if (cabeza==null && cola==null) {
-            cabeza= nuevPedido;
+        if (cabeza == null && cola == null) {
+            cabeza = nuevPedido;
         }
         else{
-            cola.next= nuevPedido;
+            cola.next = nuevPedido;
         }
-        cola=nuevPedido;
-        }
-        public void eliminar (){
-            if (cabeza!=null) {
-               nodoPedido eliminar= cabeza;
-               cabeza= cabeza.next;
-               eliminar.next= null;
-               if (cabeza==null) {
-                cola= null;
-               }
+        cola = nuevPedido;
+    }
+
+    public void eliminar (){
+        if (cabeza != null) {
+            nodoPedido eliminar = cabeza;
+            cabeza = cabeza.next;
+            eliminar.next = null;
+            if (cabeza == null) {
+              cola = null;
             }
         }
+    }
 
-        public void obtener (){
-            if (cabeza==null) {
-                System.out.println("No hay elementos");
-            }else{
-                nodoPedido primero= cabeza;
-                System.out.println("Los datos del pedido son: {id: " + primero.numeroPedido + " cliente: " + primero.nombreCliente + "}");
-                System.out.println("id: " + primero.numeroPedido + " cliente: " + primero.nombreCliente);
-            }
+    public void obtener (){
+        if (cabeza == null) {
+            System.out.println("No hay elementos");
         }
-        public  boolean isEmptyList() {
-            return cabeza==null&& cola==null;// if(cabeza=null&& cola==null){
-                                            //    return true;       
-        }                                   //     }    
-                                            //else
-                                            //   return false;
+        else{
+             nodoPedido primero= cabeza;
+             System.out.println("Los datos del pedido son: {id: " + primero.numeroPedido + " cliente: " + primero.nombreCliente + "}");
+             System.out.println(" id: " + primero.numeroPedido + " cliente: " + primero.nombreCliente);
+            }
+    }                       
 
-        public void obtenerSiguiente (){
-            if(cabeza==null){
-                System.out.println("No hay elementos en la cola");
+    public void obtenerSiguiente(){
+        if (cabeza== null) {
+            System.out.println("No hay elementos en la cola");
+        }
+        else{
+            if (cabeza.next == null) {
+                System.out.println("La cola solo tiene un elemento");
             }
             else{
-                nodoPedido primero= cabeza;
-                System.out.println("Pedidos siguientes: ");
-                while (primero!=null) {
-                    System.out.println("Los datos del siguiente pedido son: "+"id: "+ primero.numeroPedido + " cliente: " + primero.nombreCliente);
-                    primero= primero.next;
-                }
+                nodoPedido pedidoNext= cabeza.next;
+                System.out.println("Los datos del siguiente pedido son: " + " id: " + pedidoNext.numeroPedido + " cliente: " + pedidoNext.nombreCliente);
             }
-         }
+        }
+    }
 }
     
 

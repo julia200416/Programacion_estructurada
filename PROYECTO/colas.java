@@ -59,8 +59,8 @@ public class colas {
                 System.out.println("La cola solo tiene un elemento");
             }
             else{
-             NodoPedido PeidoNext=cabeza.next;
-             System.out.println("Los datos del siguiente pedido son: " + " id: " + PeidoNext.NumeroPedido + " cliente: " + PeidoNext.NombreCliente);
+             NodoPedido PedidoNext=cabeza.next;
+             System.out.println("Los datos del siguiente pedido son: " + " id: " + PedidoNext.NumeroPedido + " cliente: " + PedidoNext.NombreCliente);
             }
         }
     }
